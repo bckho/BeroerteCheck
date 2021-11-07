@@ -1,6 +1,8 @@
 # BeroerteCheck
 BeroerteCheck is an Angular app that predicts the chance of having a stroke. Created with Tensorflow js (model is trained in Python on Google Colab). Trained data is from Kaggle.
 
+Link to the deployed app: https://beroerte-check.surge.sh/
+
 ## Angular app
 You can find and run the angular app in the <code>angular-heart-stroke-pred-app</code> folder.
 
