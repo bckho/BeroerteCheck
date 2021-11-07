@@ -1,0 +1,15 @@
+.form-card {
+    padding-top: 5%;
+}
+
+.form-card-content {
+    width: 100%;
+}
+
+.btn-box {
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+}

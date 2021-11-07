@@ -1,0 +1,21 @@
+.header-background {
+    background-color: #EE2015;
+}
+
+.home-card-header {
+    background-color: #EE2015;
+}
+
+.home-card {
+    background-color: #EE2015;
+    width: 100%;
+    height: 300px;
+}
+
+.home-card-contents {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}

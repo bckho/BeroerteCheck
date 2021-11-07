@@ -1,0 +1,172 @@
+<div>
+    <div class="container">
+        <div class="form-card">
+            <div class="row">
+                <div class="col">
+                    <form [formGroup]="testInputForm" (ngSubmit)="testInputForm.valid && onSubmit()">
+                        <mat-card class="form-card-content" [class.mat-elevation-z2]="true">
+                            <mat-card-content>
+                                    
+                                <h2>Om je kans te kunnen voorspellen hebben we eerst je gegevens nodig</h2>
+                            </mat-card-content>
+                            <div class="row">
+                               
+                                <div class="col">
+                                  
+                                    <mat-card-content class="form-card-content">
+                                        <div class="form-group">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Geslacht</mat-label>
+                                                <mat-select formControlName="gender" [errorStateMatcher]="matcher">
+                                                    <mat-option *ngFor="let gender of genders"
+                                                        [value]="genders.indexOf(gender)">
+                                                        {{gender}}
+                                                    </mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="testInputForm.get('gender')!.errors">Kies een geslacht
+                                                </mat-error>
+
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Leeftijd</mat-label>
+                                                <input matInput step="1" type="number" formControlName="age" />
+                                                <mat-error *ngIf="testInputForm.get('age')!.errors">Leeftijd is ongeldig
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div>
+                                                <mat-label>Ben je ooit getrouwd geweest?</mat-label>
+                                            </div>
+                                            <div class="btn-box">
+                                                <mat-radio-group formControlName="everMarried"
+                                                    aria-label="Ooit getrouwd">
+                                                    <mat-radio-button value="0">Nee</mat-radio-button>
+                                                    <mat-radio-button value="1">Ja</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Type beroep</mat-label>
+                                                <mat-select formControlName="workType" [errorStateMatcher]="matcher">
+                                                    <mat-option *ngFor="let workType of workTypes"
+                                                        [value]="genders.indexOf(workType)">
+                                                        {{workType}}
+                                                    </mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="testInputForm.get('workType')!.errors">Kies een type
+                                                    werk
+                                                </mat-error>
+
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Type residentie</mat-label>
+                                                <mat-select formControlName="residenceType"
+                                                    [errorStateMatcher]="matcher">
+                                                    <mat-option *ngFor="let residenceType of residenceTypes"
+                                                        [value]="genders.indexOf(residenceType)">
+                                                        {{residenceType}}
+                                                    </mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="testInputForm.get('residenceType')!.errors">Kies een
+                                                    type
+                                                    residentie
+                                                </mat-error>
+
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Rook status</mat-label>
+                                                <mat-select formControlName="smoking" [errorStateMatcher]="matcher">
+                                                    <mat-option *ngFor="let smokingType of smokingStatus"
+                                                        [value]="genders.indexOf(smokingType)">
+                                                        {{smokingType}}
+                                                    </mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="testInputForm.get('smoking')!.errors">Kies een rook
+                                                    status
+                                                </mat-error>
+
+                                            </mat-form-field>
+                                        </div>
+
+
+                                    </mat-card-content>
+                                </div>
+                                <div class="col">
+                                    <mat-card-content class="form-card-content">
+                                        <div class="form-group">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>BMI</mat-label>
+                                                <input matInput type="number" min="0" max="200" formControlName="bmi" />
+                                                <mat-error *ngIf="testInputForm.get('bmi')!.errors">BMI is ongeldig
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <h4>Wat is jouw gemiddelde bloedsuikerspiegel? (mmol/L) <br /><strong>Graag leeg laten als je dit niet weet</strong></h4>
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Gemiddelde bloedsuikerspiegel</mat-label>
+                                                <input matInput type="number" min="0" max="1000"
+                                                    formControlName="avgGlucoseLevel" />
+                                                <mat-error *ngIf="testInputForm.get('avgGlucoseLevel')!.errors">
+                                                    Bloedsuikerspiegel is ongeldig
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div>
+                                                <mat-label>Heb je hypertensie (hoge bloeddruk)?</mat-label>
+                                            </div>
+                                            <div class="btn-box">
+                                                <mat-radio-group formControlName="hypertension"
+                                                    aria-label="Hypertensie">
+                                                    <mat-radio-button value="0">Nee</mat-radio-button>
+                                                    <mat-radio-button value="1">Ja</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div>
+                                                <mat-label>Heb je een hartziekte?</mat-label>
+                                            </div>
+                                            <div class="btn-box">
+                                                <mat-radio-group formControlName="heartDisease" aria-label="Hartziekte">
+                                                    <mat-radio-button value="0">Nee</mat-radio-button>
+                                                    <mat-radio-button value="1">Ja</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+
+                                    </mat-card-content>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="form-group">
+                                        <button (click)="onSubmit()" mat-raised-button color="accent" [disabled]="!testInputForm.valid">Bereken je kans</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="result-card">
+        <div class="row">
+            <div class="col">
+                <mat-card>
+                    <mat-card-content>
+                        <div class="text-center">
+                            <h1>Jouw score is: </h1>
+                            <div class="result-number">
+                                <h1 class="mat-h1-green" style="font-size: 70px;" *ngIf="resultScore < 35">
+                                    {{this.resultScore}}%</h1>
+                                <h1 class="mat-h1-orange" style="font-size: 70px;"
+                                    *ngIf="resultScore >= 35 && resultScore < 65">{{this.resultScore}}%</h1>
+                                <h1 class="mat-h1-red" style="font-size: 70px;" *ngIf="resultScore > 65">
+                                    {{this.resultScore}}%</h1>
+                            </div>
+                            <br />
+                            <div *ngIf="resultScore < 35">
+                                <h2>Je hebt een lage kans op een beroerte. Goedzo!</h2>
+                                <p>Je gezondheid is in een goede staat en je houdt ook aan een gezonde levensstijl.</p>
+                            </div>
+                            <div *ngIf="resultScore >= 35 && resultScore < 65">
+                                <h2>Je kans op een beroerte is vrij relatief. Opletten!</h2>
+                                <p>Je gezondheid is wat minder, probeer je levensstijl te verbeteren of vraag om hulp daarmee en lees de onderstaande tips.</p>
+                            </div>
+                            <div *ngIf="resultScore > 65">
+                                <h2>Je heb een vrij hoge kans op een beroerte! Opgepast!</h2>
+                                <p>Je gezondheid loopt in gevaar, vraag voor de zekerheid je dokter of arts om medische advies en lees goed de onderstaande tips door.</p>
+                            </div>
+                            <br>
+                            <p>Lees de onderstaande tips om de kans op een beroerte te verminderen.</p>
+                            <br />
+                            <div class="form-group">
+                                <button routerLink="/Test" mat-raised-button color="accent">Opnieuw een test
+                                    maken</button>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="row">
+                <div class="col">
+                    <h1>Je risico op een beroerte verlagen</h1>
+                </div>
+            </div>
+            <div class="row card-row">
+                <div class="col-md-3">
+                    <mat-card class="card-description">
+                        <h2>1. Niet roken</h2>
+                        <mat-card-content>
+                            <p>Nicotine uit sigaretten is schadelijk voor je bloedvaten en verhoogt je hartslag en de
+                                bloeddruk. Ook andere stoffen uit sigaretten zoals koolmonoxide, veroorzaken schade.
+                                Elke sigaret telt.</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col-md-3">
+                    <mat-card class="card-description">
+                        <h2>2. Gezond eten</h2>
+                        <mat-card-content>
+                            <p>Gezond eten helpt mee om een gezond gewicht te houden en je bloeddruk en cholesterol goed
+                                te houden. Dit verlaagt je kans op een beroerte.</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col-md-3">
+                    <mat-card class="card-description">
+                        <h2>3. Minder zout</h2>
+                        <mat-card-content>
+                            <p>Gemiddeld eten we in Nederland teveel zout, namelijk zo'n 9 gram zout per dag. Zout eten
+                                kan de bloeddruk verhogen en zo heb je ook meer kans op een beroerte. Eet niet meer dan
+                                6 gram zout per dag.</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col-md-3">
+                    <mat-card class="card-description">
+                        <h2>4. Afvallen</h2>
+                        <mat-card-content>
+                            <p>Als je te zwaar bent heb je meer kans op hart- en vaatziekten, zoals een beroerte. Dit
+                                geldt vooral als het vet zich rond je buik ophoopt.</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row card-row">
+                <div class="col-md-3">
+                    <mat-card class="card-description">
+                        <mat-card-content>
+                            <h2>5. Bewegen</h2>
+                            <p>Beweeg minimaal 2,5 uur per week in een stevig tempo. Dat is goed voor je hart en je
+                                bloedvaten. Het is ontspannend. Minder stress is gunstig voor je bloeddruk.</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
