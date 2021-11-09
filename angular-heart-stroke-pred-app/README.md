@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## @types 'Long' error Tensorflow JS
 
-If you encounter @types 'Long' error in the <code>hash_util.d.ts</code> file, copy/paste this code on top of the file
+If you encounter @types 'Long' error in the <code>node_modules/@tensorflow/tfjs-core/dist/hash_util.d.ts</code> file, copy/paste this code on top of the file
 ```javascript
 /// <reference types="long" />
 ```
