@@ -95,7 +95,7 @@ export class InputformComponent implements OnInit {
       let residenceType = this.testInputForm.get('residenceType')?.value
       let avgGlucoseLevel = this.testInputForm.get('avgGlucoseLevel')?.value
 
-      if (avgGlucoseLevel == null) avgGlucoseLevel = 107.18886574996678
+      if (avgGlucoseLevel == null) avgGlucoseLevel = 119.95591240875909
 
       avgGlucoseLevel = this.convertGlucoseLevel(avgGlucoseLevel);
 
